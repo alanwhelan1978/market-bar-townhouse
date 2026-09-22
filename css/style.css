@@ -1,1 +1,391 @@
 
+/* THE MARKET BAR & TOWNHOUSE
+   Website by WHELHAUS
+*/
+
+/* COLOURS */
+
+:root {
+  --charcoal: #242424;
+  --ivory: #F5F0E6;
+  --gold: #C4A675;
+  --gold-dark: #A18455;
+  --walnut: #554D43;
+  --white: #FFFFFF;
+}
+
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--ivory);
+  color: var(--charcoal);
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(90%, 1200px);
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.site-header {
+  background: var(--charcoal);
+  color: var(--ivory);
+  position: relative;
+  z-index: 10;
+}
+
+.header-inner {
+  max-width: 1400px;
+  margin: auto;
+  padding: 22px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.brand-subtitle {
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  margin-top: 8px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.main-nav a {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--gold);
+}
+
+/* BUTTONS */
+
+.btn {
+  display: inline-block;
+  padding: 15px 28px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--charcoal);
+}
+
+.btn-gold:hover {
+  background: #D9BC89;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  min-height: 650px;
+  height: 75vh;
+  max-height: 850px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/market-exterior.jpg');
+  background-size: cover;
+  background-position: center 55%;
+  transform: scale(1.01);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.48)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 40px 24px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(55px, 7vw, 105px);
+  margin-bottom: 24px;
+}
+
+.hero-description {
+  font-size: 16px;
+  max-width: 520px;
+  margin: 0 auto 32px;
+  line-height: 1.9;
+}
+
+/* BOOKING STRIP */
+
+.booking-strip {
+  background: var(--charcoal);
+  color: var(--ivory);
+  padding: 35px 0;
+}
+
+.booking-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.booking-inner .eyebrow {
+  margin-bottom: 6px;
+}
+
+.booking-inner h2 {
+  font-size: 36px;
+}
+
+.booking-inner > p {
+  max-width: 340px;
+  font-size: 13px;
+  color: #D1C8BB;
+}
+
+/* INTRODUCTION */
+
+.intro-section {
+  padding: 110px 20px;
+  text-align: center;
+}
+
+.intro-content {
+  max-width: 740px;
+}
+
+.intro-section .eyebrow {
+  color: var(--gold-dark);
+}
+
+.intro-section h2 {
+  font-size: clamp(45px, 6vw, 70px);
+  margin-bottom: 28px;
+}
+
+.intro-section p:not(.eyebrow) {
+  color: var(--walnut);
+  font-size: 16px;
+  line-height: 2;
+  margin-bottom: 30px;
+}
+
+.text-link {
+  display: inline-block;
+  color: var(--charcoal);
+  border-bottom: 1px solid var(--gold-dark);
+  padding-bottom: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* PLACEHOLDER */
+
+.placeholder-section {
+  padding: 80px 0;
+  background: #EAE2D5;
+  text-align: center;
+}
+
+.placeholder-section h2 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+/* FOOTER */
+
+.site-footer {
+  background: var(--charcoal);
+  color: var(--ivory);
+  padding: 65px 0 25px;
+}
+
+.footer-inner h2 {
+  font-size: 38px;
+  letter-spacing: 2px;
+}
+
+.footer-inner > div > p {
+  font-size: 13px;
+  color: #C9C1B4;
+}
+
+.footer-bottom {
+  border-top: 1px solid #494949;
+  margin-top: 45px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.footer-bottom a {
+  color: var(--gold);
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/* TABLET */
+
+@media (max-width: 950px) {
+  .header-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .brand {
+    width: 100%;
+  }
+
+  .main-nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .hero {
+    min-height: 560px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .header-inner {
+    padding: 20px 5%;
+    gap: 22px;
+  }
+
+  .brand-name {
+    font-size: 31px;
+  }
+
+  .main-nav {
+    gap: 15px;
+  }
+
+  .main-nav a {
+    font-size: 10px;
+  }
+
+  .header-booking {
+    width: 100%;
+  }
+
+  .hero {
+    height: 65vh;
+    min-height: 490px;
+  }
+
+  .hero-image {
+    background-position: center;
+  }
+
+  .hero h1 {
+    font-size: 57px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .booking-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .intro-section {
+    padding: 75px 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
